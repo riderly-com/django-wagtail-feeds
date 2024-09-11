@@ -12,6 +12,9 @@ from wagtail.contrib.settings.models import (
 
 @register_setting
 class RSSFeedsSettings(BaseSetting):
+    id = models.AutoField(
+        auto_created=True, primary_key=True, serialize=False, verbose_name="ID"
+    )
     feed_app_label = models.CharField(
         _('Feed app label'),
         max_length=255,
