@@ -7,13 +7,8 @@ from django.utils.feedgenerator import (
     Rss201rev2Feed
 )
 
-from wagtail import VERSION as WAGTAIL_VERSION
-if WAGTAIL_VERSION >= (2, 0):
-    from wagtail.core.models import Site
-    from wagtail.core.rich_text import expand_db_html
-else:
-    from wagtail.wagtailcore.models import Site
-    from wagtail.wagtailcore.rich_text import expand_db_html
+from wagtail.models import Site
+from wagtail.rich_text import expand_db_html
 
 from datetime import datetime, time
 from django.utils.html import strip_tags
